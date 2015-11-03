@@ -35,7 +35,12 @@ IO.puts(foo.(12))
 IO.puts(foo.(13))
 
 prefix = fn name -> (fn surname -> "#{name} #{surname}" end) end
+prefix_one_func = fn (name, surname) -> "#{name} #{surname}" end
+prefix_one_func_short = &("#{&1} #{&2}")
+
 IO.puts(prefix.("Jordi").("Doe"))
+IO.puts(prefix_one_func.("Jordi").("Doe"))
+IO.puts(prefix_one_func_short.("Jordi").("Doe"))
 
 # Exercise: Functions-4
 Enum.map [1, 2, 3, 4], &(&1 + 2)
