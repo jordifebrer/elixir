@@ -33,3 +33,7 @@ IO.puts(foo.(10))
 IO.puts(foo.(11))
 IO.puts(foo.(12))
 IO.puts(foo.(13))
+
+# Exercise: Functions-4
+Enum.map [1, 2, 3, 4], &(&1 + 2)
+Enum.map [1, 2, 3, 4], &(IO.inspect &1)
