@@ -29,3 +29,7 @@ IO.puts(foo.(11))
 IO.puts(foo.(12))
 IO.puts(foo.(13))
 
+# Exercise: Functions-4
+prefix = fn name -> (fn surname -> "#{name} #{surname}" end) end
+
+IO.puts(prefix.("Jordi").("Doe"))
