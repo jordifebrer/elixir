@@ -3,7 +3,11 @@
 
 # Exercise: Functions-1
 list_concat = fn a, b -> a ++ b end
+list_concat_short = &(&1 ++ &2)
+
 sum = fn a, b, c -> a + b + c end
+sum_short = &(&1 + &2 + &3)
+
 pair_tuple_to_list = fn {a, b} -> [a] ++ [b] end
 
 # Exercise: Functions-2
@@ -23,9 +27,9 @@ IO.puts(fizz_buzz.(1, 2, 3))
 foo = fn (n) ->
   fizz_buzz.(rem(n, 3), rem(n, 5), n)
 end
+foo_short = &(fizz_buzz.(rem(&1, 3), rem(&1, 5), &1))
 
 IO.puts(foo.(10))
 IO.puts(foo.(11))
 IO.puts(foo.(12))
 IO.puts(foo.(13))
-
