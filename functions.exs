@@ -44,4 +44,7 @@ IO.puts(prefix_one_func_short.("Jordi").("Doe"))
 
 # Exercise: Functions-4
 Enum.map [1, 2, 3, 4], &(&1 + 2)
+# Same op with pipe operator
+(1..4) |> Enum.map &(&1 + 2)
+
 Enum.map [1, 2, 3, 4], &(IO.inspect &1)
