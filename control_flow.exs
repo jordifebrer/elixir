@@ -2,26 +2,26 @@
 
 # if/else
 if true do
-	"True!"
+  "True!"
 else
    "False!"
 end
 
 # unless
 unless True do
-	"False!"
+  "False!"
 else
-	"True!"
+  "True!"
 end
 
 # cond => simulates 'else if'
 cond do
-	1 == 2 -> 
+  1 == 2 ->
     "False!"
   1 == 3 ->
-  	"False!"
+    "False!"
   true ->
-  	"Else.. always true"
+    "Else.. always true"
 end
 
 # case 
@@ -33,5 +33,5 @@ case [1, 2] do
   [_, 3] ->
     "False, 3 != 2"
   _ ->
-  	"True!"
-end	
+    "True!"
+end
