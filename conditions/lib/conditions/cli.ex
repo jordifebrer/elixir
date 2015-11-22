@@ -1,5 +1,7 @@
 defmodule Conditions.CLI do
 
+  @icao_regex_format ~r/^[A-Z]{4}$/
+
   @moduledoc """
   TO DO
   """
@@ -15,7 +17,7 @@ defmodule Conditions.CLI do
                                      aliases:  [ h:    :help    ])
     case parse do
       { [ help: true ], _, _ } -> :help
-      { _, [ icao ], _ } -> { icao }
+      { _, [ icao ], _ } -> if is_icao(icao), do: { icao }, else: :help
       _ -> :help
     end
   end
@@ -27,12 +29,10 @@ defmodule Conditions.CLI do
     System.halt(0)
   end
 
-  defmacro is_new_user(phone) do
-    quote do: unquote(phone) != "123"
-  end
-
   def process({icao}) do
     IO.puts "TO DO process.."
     System.halt(0)
   end
+
+  defp is_icao(param), do: Regex.match?(@icao_regex_format, param)
 end
