@@ -17,7 +17,8 @@ defmodule Conditions.CLI do
                                      aliases:  [ h:    :help    ])
     case parse do
       { [ help: true ], _, _ } -> :help
-      { _, [ icao ], _ } -> if is_icao(icao), do: { icao }, else: :help
+      { _, [ icao ], _ } when is_binary(icao) ->
+                           if is_icao(icao), do: { icao }, else: :help
       _ -> :help
     end
   end
@@ -34,5 +35,5 @@ defmodule Conditions.CLI do
     System.halt(0)
   end
 
-  defp is_icao(param), do: Regex.match?(@icao_regex_format, param)
+  defp is_icao(str), do: Regex.match?(@icao_regex_format, str)
 end
