@@ -40,3 +40,9 @@ $ mix escript.build
 ```sh
 $ ./issues elixir-lang elixir 3
 ```
+
+### creates project documentation
+```sh
+$ mix docs
+$ open open doc/index.html
+```
